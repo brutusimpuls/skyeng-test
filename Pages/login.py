@@ -11,6 +11,7 @@ class login(BasePage):
     def apple_id(self):
         apple_id = self.find_element((login_locators.LOCATOR_APPLE_ID))
         apple_id.click()
+        print("Авторизуемся через Apple ID")
 
     def check_apple(self):
         try:
