@@ -12,8 +12,10 @@ class redemption_games_locators:
 class redemption_game_page(BasePage):
 
     def choose_redemption2(self, text):
+        print("Открываем выпадашку с версиями игры")
         choose = self.find_element(redemption_games_locators.LOCATOR_CHOOSE_VERSION_GAME)
         choose.click()
+        print("Выбираем нужную нам игру")
         list_results = self.find_element(redemption_games_locators.LOCATOR_LIST_VERSION_GAME)
         item = list_results.find_elements_by_tag_name("li")
         for result in item:

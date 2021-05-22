@@ -1,6 +1,7 @@
 from BaseApp import BasePage
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import TimeoutException
 
 class cookieslocators:
     LOCATOR_COOKIES_POLICY_TEXT = (By.CSS_SELECTOR, '#onetrust-policy-text > a')
@@ -9,5 +10,8 @@ class cookieslocators:
 
 class cookies_block(BasePage):
     def agree_button(self):
-        click_button_agree = self.find_element(cookieslocators.LOCATOR_COOKIES_AGREE_BUTTON)
-        click_button_agree.click()
+        try:
+            click_button_agree = self.find_element(cookieslocators.LOCATOR_COOKIES_AGREE_BUTTON)
+            click_button_agree.click()
+        except TimeoutException:
+            print('Нет попапа соглашения по кукам')

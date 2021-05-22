@@ -8,7 +8,7 @@ from config import *
 def browser(request):
     browser = webdriver.Firefox()
     browser.maximize_window()
-    browser.implicitly_wait(45)
+    browser.implicitly_wait(15)
     yield browser
     browser.quit()
     #request.addfinalizer(driver.quit)

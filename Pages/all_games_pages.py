@@ -9,6 +9,7 @@ class all_games_pages_loacators:
 
 class all_games(BasePage):
     def add_to_favorite(self):
+        print("Добавляем игру в желаемые")
         time.sleep(1)
         add_to_favorite = self.find_element(all_games_pages_loacators.LOCATOR_ADD_TO_FAVORITES)
         add_to_favorite.click()
