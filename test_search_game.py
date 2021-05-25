@@ -8,12 +8,12 @@ from config import *
 import time
 
 
-def test_search(browser):
+def test_search(browser, gamename):
     browser.get(base_url)
     time.sleep(1)
 
     search_page=search_game(browser)
-    search_page.click_field_search(text_point2)
+    search_page.click_field_search(gamename)
     search_page.clear_field_search()
     search_page.check_empty_field()
 
@@ -21,9 +21,9 @@ def test_search(browser):
     cookies.agree_button()
     time.sleep(1)
 
-def test_redemption(browser):
+def test_redemption(browser, gamename):
     search_page=search_game(browser)
-    search_page.click_field_search(text_point2)
+    search_page.click_field_search(gamename)
     search_page.search_result(text_point5)
 
 def test_confirm_age(browser):
